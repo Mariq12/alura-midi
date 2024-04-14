@@ -1,0 +1,84 @@
+:root {
+  --black: #000; 
+  --grey: #aaa;
+  --dark-gray: #666;
+  --red: #e93d50;
+  --dark-red: #af303f;
+  --white: #fff;
+  --light: rgb(229, 255, 0);
+  --first-bg: -webkit-linear-gradient(left, #ff27d7 0%, #ff58e7 50%, #ff58e7 50%, #ff98f3 70%, #ffc6f9 90%, #ffe3fc 100%); 
+  --keyboard-bg: linear-gradient(to bottom, #e9e6e6 0%, #fff0fc 50%, #cccccc 100%);
+  /* ** Colores de las teclas** */
+  --color-tecla_pom: #ff0000;     /* Rojo */
+  --color-tecla_clap: #00ff00;    /* Verde */
+  --color-tecla_tim: #0000ff;     /* Azul */
+  --color-tecla_puff: #ffff00;    /* Amarillo */
+  --color-tecla_splash: #ff00ff;  /* Magenta */
+  --color-tecla_toim: #00ffff;    /* Cian */
+  --color-tecla_psh: #ff8000;     /* Naranja */
+  --color-tecla_tic: #8000ff;     /* Morado */
+  --color-tecla_tom: #00ff80;     /* Turquesa */
+}
+
+body {
+  align-items: center;
+  /*azul celeste */ 
+  background: var(--first-bg); 
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--white);
+  margin-bottom: 35px;
+  font-size: 2rem;
+  font-weight: bold;
+  
+}
+
+.teclado {
+  background: var(--keyboard-bg);
+  box-shadow: 6px 8px 0 6px var(--dark-gray), 10px 10px 10px var(--black);
+  border-radius: 30px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+.tecla {
+  background-color: var(--white);
+  border-radius: 30px;
+  box-shadow: 3px 3px 0 var(--grey);
+  color: var(--red);
+  cursor: pointer;
+  height: 120px;
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 120px;
+  text-align: center;
+  width: 120px;
+}
+
+.tecla.activa,
+.tecla:active {
+  background-color: var(--red);
+  box-shadow: 3px 3px 0 var(--dark-red) inset;
+  color: var(--white);
+  outline: none;
+}
+
+.tecla.focus,
+.tecla:focus {
+  outline: none;
+  box-shadow: 1px 1px 10px var(--light);
+}
+
+.tecla.active:focus,
+.tecla:active:focus {
+  box-shadow: 3px 3px 0 var(--dark-red) inset, 1px 1px 10px var(--light);
+}
